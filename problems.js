@@ -8,18 +8,35 @@ function divideByThree(num) {
 function averageOfTwo(num1, num2) {
     /* Returns the average of two numbers, num1 and num2. */
     // Your code here
+    let x = (num1 + num2) / 2;
+    return x;
 };
 
 function averageOfFour(num1, num2, num3, num4) {
     /* Takes in four numbers. The function should return the average of all of
     the numbers. */
     // Your code here
+    let x = (num1 + num2 + num3 + num4) / 4;
+    return x;
 };
 
 function doubler(nums) {
     /* Takes an array of numbers and returns a new array where every element of
     the original array is multiplied by 2. */
     // Your code here
+    let x = 0;
+    let doubleNum = [];
+
+    while (x < nums.length) {
+        let oldNum = nums[x];
+        let newNum = oldNum * 2;
+
+        doubleNum = doubleNum.concat(newNum);
+
+        x += 1;
+    }
+
+    return doubleNum;
 };
 
 function combineArrays(arr1, arr2) {
@@ -28,6 +45,12 @@ function combineArrays(arr1, arr2) {
     calling this method won't permanently change, also known as **mutate**,
     either array. */
     // Your code here
+
+    let arr3 = [];
+    arr3 = arr3.concat(arr1, arr2)
+
+    return arr3;
+
 };
 
 function wordWithinArray(word, arr) {
@@ -35,6 +58,12 @@ function wordWithinArray(word, arr) {
     boolean that returns true if that string is located inside of the array, or
     false if it does not. Use `Array.indexOf`. */
     // Your code here
+
+   if (arr.indexOf(word) >= 0) {
+        return true;
+    } else {
+        return false;
+    }
 };
 
 function echo(str) {
@@ -43,22 +72,43 @@ function echo(str) {
     echo("hey"); // => returns "HEY ... hey ... hey"
     echo("JUMp"); // => returns "JUMP ... JUMp ... jump" */
     // Your code here
+
+    let echo = str.toUpperCase() + " ... " + str + " ... " + str.toLowerCase();
+
+    return echo;
 };
 
 function fizzBuzz(max) {
     /* Takes a number, max and returns an array that contains every number from
     0 to max (not inclusive) that is divisible by either 3 or 5, **but not both**. */
     // Your code here
+    let maxArray = [];
+    for (let x = 0; x < max; x++) {
+
+        if ((x % 3 === 0) && (x % 5 !== 0)) {
+            maxArray = maxArray.concat(x);
+        } else if ((x % 3 !== 0) && (x % 5 === 0)) {
+            maxArray = maxArray.concat(x);
+        }
+    }
+
+    return maxArray;
 };
 
 function hello(name) {
     /* Takes in a string name and returns a string saying "Hello, " to that name. */
     // Your code here
+
+    let x = "Hello, " + name;
+    return x;
 };
 
 function goodbye(name) {
     /* Takes in a string name and returns a string saying "Bye, " to that name. */
     // Your code here
+
+    let x = "Bye, " + name;
+    return x;
 };
 
 function isFive(num) {
